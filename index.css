@@ -1,0 +1,152 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  /* Header Styles */
+  /* Navbar Styles */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    height: 80px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+  }
+  
+  .navbar-logo {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #008080;
+    margin-left: 20px;
+  }
+  
+  .navbar-menu {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin-right: 20px;
+  }
+  
+  .navbar li {
+    margin: 0 10px;
+  }
+  
+  .navbar a {
+    color: #008080;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .navbar a:hover {
+    color: #ffcc00;
+  }
+  
+  /* Hero Styles */
+  .hero {
+    background-image: url('hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .hero h2 {
+    font-size: 3rem;
+    color: #000000;
+    text-align: center;
+  }
+  
+  .hero p {
+    font-size: 1.5rem;
+    color: #000000;
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  /* Services Styles */
+  .services {
+    padding: 80px 0;
+    background-color: #f2f2f2;
+  }
+  
+  .services h3 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.5rem;
+    font-weight: bold;
+  }
+  
+  .service-items {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+  }
+  
+  .service-item {
+    flex-basis: 300px;
+    margin: 0 20px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding: 30px;
+    transition: box-shadow 0.3s ease-in-out;
+  }
+  
+  .service-item:hover {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+  }
+  
+  .service-item i {
+    font-size: 3rem;
+    color: #008080;
+    margin-bottom: 20px;
+  }
+  
+  .service-item h4 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .service-item p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  
+  /* Footer Styles */
+  footer {
+    background-color: #008080;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+  }
+  
+  footer p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  
