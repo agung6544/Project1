@@ -5,7 +5,7 @@
 </head>
 <body>
     <h2>Formulir Pendaftaran Antrian</h2>
-    <form action="server_antrian.php" method="POST">
+    <form action="tambah_antri.php" method="POST">
         <label for="nama">Nama:</label>
         <input type="text" name="nama" id="nama" required><br>
         
