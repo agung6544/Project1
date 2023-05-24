@@ -1,0 +1,32 @@
+<?php 
+
+$koneksi = mysqli_connect("localhost","root","","lestore");
+
+// Check connection
+if (mysqli_connect_errno()){
+	echo "Database connection error! : " . mysqli_connect_error();
+}
+
+
+// Buat no antri
+$antri_query = "SELECT MAX(no_antri) as max_queue FROM tb_antri";
+$result = mysqli_query($koneksi, $antri_query);
+$row = mysqli_fetch_assoc($result);
+$maxQueue = $row['max_queue'];
+$nextQueue = $maxQueue + 1;
+
+
+// Define input variables
+$nama = $_POST['nama'];
+$no_telp = $_POST['no_telp'];
+$no_antri = $nextQueue;
+$tanggal = date("Y-m-d");
+$waktu = date("H:i:s");
+
+// Add data to databse using query
+mysqli_query($koneksi,"insert into tb_antri values('','$no_antri','$tanggal','$waktu','$nama','$no_telp')");
+
+// Redirect back to homepage
+header("location:user.php");
+
+?>

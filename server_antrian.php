@@ -51,3 +51,5 @@ echo "Nomor Antrian Anda: " . $no_antrian;
 // Tutup koneksi
 mysqli_close($koneksi);
 ?>
+
+

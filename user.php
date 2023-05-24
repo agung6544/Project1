@@ -1,4 +1,3 @@
-<?php include('server_antrian.php') ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,14 +5,14 @@
 </head>
 <body>
     <h2>Formulir Pendaftaran Antrian</h2>
-    <form action="" method="POST">
+    <form action="server_antrian.php" method="POST">
         <label for="nama">Nama:</label>
         <input type="text" name="nama" id="nama" required><br>
         
         <label for="telepon">Nomor Telepon:</label>
         <input type="text" name="no_telp" id="telepon" required><br>
         
-        <input type="submit" nama="reg_antri" value="Daftar Antrian">
+        <input type="submit" value="Daftar Antrian">
     </form>
 </body>
 </html>
