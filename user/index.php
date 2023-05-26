@@ -4,15 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Puskesmas</title>
-    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="../css/index.css" />
   </head>
   <body>
     <nav class="navbar">
       <h1 class="navbar-logo">Puskesmas XYZ</h1>
       <ul class="navbar-menu">
         <li><a href="#">Beranda</a></li>
-        <li><a href="#">Antrian</a></li>
-        <li><a href="login.php">log in</a></li>
+        <li><a href="login.php">Log in</a></li>
       </ul>
     </nav>
 

@@ -1,6 +1,6 @@
 body{
     height: 100vh;
-    background-image: url('image/hospital.png');
+    background: url("../image/hospital.png") no-repeat center center fixed; 
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -9,7 +9,6 @@ body{
 
 .container {
     max-width: 400px;
-    background: url("hospital.png");
     margin: 0 auto;
     padding: 20px;
   }

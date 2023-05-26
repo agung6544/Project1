@@ -1,7 +1,9 @@
+<?php include('server.php') ?>
 <!DOCTYPE html>
 <html>
 <head>
     <title>Sistem Antrian</title>
+    <link rel="stylesheet" href="../css/user.css">
 </head>
 <body>
     <h2>Formulir Pendaftaran Antrian</h2>
