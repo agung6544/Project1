@@ -1,4 +1,16 @@
-<?php include('server.php') ?>
+<?php include('server.php');
+
+$acc_username = $_SESSION['username'];
+$koneksi = mysqli_connect("localhost","root","","puskesmas");
+$acc_query = "SELECT * FROM tb_user WHERE username = '$acc_username'";
+$result = mysqli_query($koneksi, $acc_query);
+
+// Fetch the row from the query result
+$row = mysqli_fetch_assoc($result);
+$nama = $row['nama'];
+$id = $row['id'];
+$no_telp = $row['no_telp'];
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,15 +18,35 @@
     <link rel="stylesheet" href="../css/user.css">
 </head>
 <body>
-    <h2>Formulir Pendaftaran Antrian</h2>
+    <h2>Selamat datang, <?php echo $nama; ?>!</h2>
     <form action="tambah_antri.php" method="POST">
-        <label for="nama">Nama:</label>
-        <input type="text" name="nama" id="nama" required><br>
-        
-        <label for="telepon">Nomor Telepon:</label>
-        <input type="text" name="no_telp" id="telepon" required><br>
-        
-        <input type="submit" value="Daftar Antrian">
+        <input type="hidden" name="id" id="id" value="<?php echo $id; ?>" required><br>        
+        <input type="hidden" name="no_telp" id="no_telp" value="<?php echo $no_telp; ?>" required><br>        
+        <input type="hidden" name="nama" id="nama" value="<?php echo $nama; ?>" required><br>        
+            
+        <input type="submit" value="Buat Antrian">
     </form>
+
+    <table class="table table-dark table-striped center">
+        <tr>
+            <th>NO</th>
+            <th>Antrian</th>
+            <th>Nama Pasien</th>
+        </tr>
+        <?php 
+            $koneksi = mysqli_connect("localhost","root","","puskesmas");
+            $no = 1;
+            $data = mysqli_query($koneksi,"select * from tb_antri where user_id = $id");
+            while($d = mysqli_fetch_array($data)){
+        ?>
+            <tr>
+                <td><?php echo $no++; ?></td>
+                <td><?php echo $d['no_antrian']; ?></td>
+                <td><?php echo $d['nama']; ?></td>
+          </tr>
+        <?php 
+            }
+         ?>
+    </table>
 </body>
 </html>
