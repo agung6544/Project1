@@ -26,27 +26,5 @@ $no_telp = $row['no_telp'];
             
         <input type="submit" value="Buat Antrian">
     </form>
-
-    <table class="table table-dark table-striped center">
-        <tr>
-            <th>NO</th>
-            <th>Antrian</th>
-            <th>Nama Pasien</th>
-        </tr>
-        <?php 
-            $koneksi = mysqli_connect("localhost","root","","puskesmas");
-            $no = 1;
-            $data = mysqli_query($koneksi,"select * from tb_antri where user_id = $id");
-            while($d = mysqli_fetch_array($data)){
-        ?>
-            <tr>
-                <td><?php echo $no++; ?></td>
-                <td><?php echo $d['no_antrian']; ?></td>
-                <td><?php echo $d['nama']; ?></td>
-          </tr>
-        <?php 
-            }
-         ?>
-    </table>
 </body>
 </html>
