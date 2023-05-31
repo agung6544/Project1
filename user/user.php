@@ -17,7 +17,60 @@ $no_telp = $row['no_telp'];
     <title>Sistem Antrian</title>
     <link rel="stylesheet" href="../css/user.css">
 </head>
+<style>
+    /* Navbar Styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  height: 80px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+}
+
+.navbar-logo {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #008080;
+  margin-left: 20px;
+}
+
+.navbar-menu {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin-right: 20px;
+}
+
+.navbar li {
+  margin: 0 10px;
+}
+
+.navbar a {
+  color: #008080;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: color 0.3s ease-in-out;
+}
+
+.navbar a:hover {
+  color: #ffcc00;
+}
+   </style>
 <body>
+<nav class="navbar">
+      <h1 class="navbar-logo">Puskesmas XYZ</h1>
+      <ul class="navbar-menu">
+        <li><a href="index.php">Beranda</a></li>
+      </ul>
+    </nav>
+    <div style="margin-top: 10%;">
     <h2>Selamat datang, <?php echo $nama; ?>!</h2>
     <form action="tambah_antri.php" method="POST">
         <input type="hidden" name="id" id="id" value="<?php echo $id; ?>" required><br>        
@@ -26,5 +79,6 @@ $no_telp = $row['no_telp'];
             
         <input type="submit" value="Buat Antrian">
     </form>
+    </div>
 </body>
 </html>

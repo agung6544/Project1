@@ -19,12 +19,12 @@ $maxQueue = $row['max_queue'] + 1;
 $id = $_POST['id'];
 $nama = $_POST['nama'];
 $no_telp = $_POST['no_telp'];
-$no_antri = $maxQueue;
+$no_antrian = $maxQueue;
 $tanggal = date("Y-m-d");
 $waktu = date("H:i:s");
 
 // Add data to databse using query
-mysqli_query($koneksi,"insert into tb_antri values('','$id','$no_antri','$tanggal','$waktu','$nama','$no_telp')");
+mysqli_query($koneksi,"insert into tb_antri values('','$no_antrian','$tanggal','$waktu','$nama','$no_telp')");
 
 $color = "red";
 $fontSize = "20px";

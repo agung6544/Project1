@@ -36,11 +36,6 @@
             <h4>Perawatan Medis</h4>
             <p>Kami memiliki tenaga medis yang handal dan terlatih untuk memberikan perawatan medis terbaik untuk pasien.</p>
           </div>
-          <div class="service-item">
-            <i class="fas fa-briefcase-medical"></i>
-            <h4>Pelayanan Gigi dan Mulut</h4>
-            <p>Kami juga menyediakan pelayanan gigi dan mulut, mulai dari pemeriksaan gigi hingga perawatan ortodonti.</p>
-          </div>
         </div>
       </div>
     </section>
