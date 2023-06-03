@@ -1,9 +1,9 @@
 <?php
 $koneksi = mysqli_connect("localhost","root","","puskesmas");
-$antri_query="SELECT MAX(no_antrian) as max_antri FROM tb_antri";
-$result = mysqli_query($koneksi, $antri_query);
+$sql = "SELECT MAX(no_antrian) AS max_no_antrian FROM tb_antri WHERE tanggal = CURDATE()";
+$result = mysqli_query($koneksi, $sql);
 $row = mysqli_fetch_assoc($result);
-$maxQueue = $row['max_antri'] ;
+$max_no_antrian = $row['max_no_antrian'];
 $tanggal = date("Y-m-d");
 ?>
 <!DOCTYPE html>
@@ -18,7 +18,7 @@ $tanggal = date("Y-m-d");
   <body>
     <div class="container">
       <h4>Nomor Antrian :</h4>
-      <p id="nomor"><?php echo  $maxQueue ; ?></p>
+      <p id="nomor"><?php echo  $max_no_antrian ; ?></p>
       <h4>Tanggal :</h4>
       <p id="tanggal"><?php echo  $tanggal ; ?></p>
     </div>

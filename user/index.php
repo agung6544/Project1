@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../css/index.css" />
   </head>
   <body>
-    <nav class="navbar">
+    <nav class="navbar">  
       <h1 class="navbar-logo">Puskesmas XYZ</h1>
       <ul class="navbar-menu">
         <li><a href="#">Beranda</a></li>

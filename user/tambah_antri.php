@@ -1,35 +1,41 @@
-<?php 
+<?php
 
-$koneksi = mysqli_connect("localhost","root","","puskesmas");
+$koneksi = mysqli_connect("localhost", "root", "", "puskesmas");
 
 // Check connection
-if (mysqli_connect_errno()){
-	echo "Database connection error! : " . mysqli_connect_error();
+if (mysqli_connect_errno()) {
+    echo "Database connection error! : " . mysqli_connect_error();
+    exit();
 }
 
-
-// Buat no antri
-$antri_query = "SELECT MAX(no_antrian) as max_queue FROM tb_antri";
-$result = mysqli_query($koneksi, $antri_query);
-$row = mysqli_fetch_assoc($result);
-$maxQueue = $row['max_queue'] + 1;
-
-
 // Define input variables
-$id = $_POST['id'];
 $nama = $_POST['nama'];
 $no_telp = $_POST['no_telp'];
-$no_antrian = $maxQueue;
-$tanggal = date("Y-m-d");
 $waktu = date("H:i:s");
+$tanggal = date("Y-m-d");
 
-// Add data to databse using query
-mysqli_query($koneksi,"insert into tb_antri values('','$no_antrian','$tanggal','$waktu','$nama','$no_telp')");
+// Buat no antri
+$sql = "SELECT MAX(no_antrian) AS max_no_antrian FROM tb_antri WHERE tanggal = CURDATE()";
+$result = mysqli_query($koneksi, $sql);
+$row = mysqli_fetch_assoc($result);
+$max_no_antrian = $row['max_no_antrian'];
+
+$new_no_antrian = $max_no_antrian + 1;
+
+// Add data to database if not duplicate
+$insertQuery = "INSERT INTO tb_antri (no_antrian, tanggal, waktu, nama, no_telp) 
+               SELECT '$new_no_antrian', '$tanggal', '$waktu', '$nama', '$no_telp'
+               FROM dual 
+               WHERE NOT EXISTS (
+                   SELECT * FROM tb_antri WHERE tanggal = '$tanggal' AND nama = '$nama' AND no_telp = '$no_telp'
+               )";
+
+mysqli_query($koneksi, $insertQuery);
 
 $color = "red";
 $fontSize = "20px";
 
 // Redirect back to homepage
 header("location:cetak.php");
-
+exit();
 ?>

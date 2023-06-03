@@ -65,6 +65,7 @@
   text-align: left;
   color: hsl(200, 18%, 90%);
 }
+
 body {
   height: 100vh;
   background: url('../image/hospital.png');
