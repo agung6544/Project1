@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 26, 2023 at 11:47 AM
--- Server version: 10.4.24-MariaDB
--- PHP Version: 7.4.29
+-- Waktu pembuatan: 09 Jun 2023 pada 14.41
+-- Versi server: 10.4.28-MariaDB
+-- Versi PHP: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_antri`
+-- Struktur dari tabel `tb_antri`
 --
 
 CREATE TABLE `tb_antri` (
@@ -34,27 +34,25 @@ CREATE TABLE `tb_antri` (
   `waktu` time NOT NULL,
   `nama` varchar(32) NOT NULL,
   `no_telp` int(12) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `tb_antri`
+-- Dumping data untuk tabel `tb_antri`
 --
 
 INSERT INTO `tb_antri` (`id`, `no_antrian`, `tanggal`, `waktu`, `nama`, `no_telp`) VALUES
-(302, 1, '2023-05-24', '15:15:38', 'agung', 232113342),
-(303, 2, '2023-05-24', '15:36:49', 'YOGINARA', 222222),
-(304, 3, '2023-05-24', '15:38:01', 'yogi', 23121),
-(305, 4, '2023-05-24', '15:40:10', 'Yogiiii', 2147483647),
-(306, 5, '2023-05-24', '16:17:51', 'agung', 2147483647),
-(307, 6, '2023-05-24', '17:27:55', 'agung', 453453463),
-(308, 7, '2023-05-24', '17:39:49', 'agung232345', 453453463),
-(309, 8, '2023-05-25', '13:53:53', 'andika', 912281),
-(310, 9, '2023-05-26', '05:55:50', 'agung', 42423243);
+(4, 1, '2023-06-01', '16:00:13', 'agung', 324232342),
+(10, 2, '2023-06-01', '16:24:15', 'budi', 23567872),
+(11, 3, '2023-06-01', '16:26:39', 'Tono', 24246788),
+(350, 1, '2023-06-02', '16:35:06', 'agung', 324232342),
+(351, 2, '2023-06-02', '16:35:59', 'budi', 23567872),
+(352, 1, '2023-06-03', '16:36:37', 'budi', 23567872),
+(353, 2, '2023-06-03', '16:45:58', 'agung', 324232342);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_user`
+-- Struktur dari tabel `tb_user`
 --
 
 CREATE TABLE `tb_user` (
@@ -68,48 +66,54 @@ CREATE TABLE `tb_user` (
   `tgl_lahir` date NOT NULL,
   `alamat` varchar(50) NOT NULL,
   `no_telp` int(12) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `tb_user`
+-- Dumping data untuk tabel `tb_user`
 --
 
 INSERT INTO `tb_user` (`id`, `username`, `email`, `password`, `nik`, `nama`, `jenis_kelamin`, `tgl_lahir`, `alamat`, `no_telp`) VALUES
 (4, 'a', 'agung', 'c4ca4238a0b923820dcc509a6f75849b', 12314323, 'agung', 'Laki-Laki', '2023-06-01', 'asd', 324232342),
-(5, 'agung', 'asdasasd', '202cb962ac59075b964b07152d234b70', 2147483647, 'agung', 'Laki-Laki', '2023-05-26', 'asdad3d31', 2147483647);
+(5, 'agung', 'asdasasd', '202cb962ac59075b964b07152d234b70', 2147483647, 'agung', 'Laki-Laki', '2023-05-26', 'asdad3d31', 2147483647),
+(6, 'agus', 'agus23@gmail.com', '01c3c766ce47082b1b130daedd347ffd', 31414, 'agus', 'Laki-Laki', '2023-05-31', 'jl.pusuk buhit', 2147483647),
+(7, 'asdada', 'ssdasda@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', 233254235, 'sadaf', 'Laki-Laki', '2023-05-31', 'jl.balakan', 2147483647),
+(8, 'contoh', 'contoh@gmail.com', '25d55ad283aa400af464c76d713c07ad', 143252, 'contoh', 'Laki-Laki', '2023-05-31', 'jl.tersatu', 2147483647),
+(9, 'y', 'y', '415290769594460e2e485922904f345d', 12313, 'y', 'Laki-Laki', '2023-05-31', 'y', 21314),
+(10, 'p1', 'p1@gmail.com', '202cb962ac59075b964b07152d234b70', 12345, 'budi', 'Laki-Laki', '2023-06-01', 'jl.bandung', 23567872),
+(11, 'p2', 'p2@gmail.com', '202cb962ac59075b964b07152d234b70', 2314256, 'Tono', 'Laki-Laki', '2023-06-01', 'jl.jakarta', 24246788);
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `tb_antri`
+-- Indeks untuk tabel `tb_antri`
 --
 ALTER TABLE `tb_antri`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `tb_user`
+-- Indeks untuk tabel `tb_user`
 --
 ALTER TABLE `tb_user`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `nik` (`nik`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `tb_antri`
+-- AUTO_INCREMENT untuk tabel `tb_antri`
 --
 ALTER TABLE `tb_antri`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=311;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=354;
 
 --
--- AUTO_INCREMENT for table `tb_user`
+-- AUTO_INCREMENT untuk tabel `tb_user`
 --
 ALTER TABLE `tb_user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
