@@ -64,7 +64,7 @@ $tanggal = date("Y-m-d");
   <nav class="navbar">
       <h1 class="navbar-logo">Puskesmas XYZ</h1>
       <ul class="navbar-menu">
-        <li><a href="index.php">Beranda</a></li>
+        <li><a href="../index.php">Beranda</a></li>
         <li><a href="login.php">Log in</a></li>
       </ul>
     </nav>
